@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading */
+.loader {
+  --dim: 3rem;
+  width: var(--dim);
+  height: var(--dim);
+  position: relative;
+  animation: spin988 2s linear infinite;
+}
+
+.loader .circle {
+  --color: #E81C2E;
+  --dim: 1.2rem;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.loader .circle:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.loader .circle:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin988 {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  20%, 25% {
+    transform: scale(1.3) rotate(90deg);
+  }
+
+  45%, 50% {
+    transform: scale(1) rotate(180deg);
+  }
+
+  70%, 75% {
+    transform: scale(1.3) rotate(270deg);
+  }
+
+  95%, 100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-[2.7rem] font-semibold leading-[3.9rem] md:text-[2.986rem];
+  }
+  h2 {
+    @apply text-[2.32rem] font-semibold leading-[3.35rem] md:text-[2.488rem];
+  }
+  h3 {
+    @apply text-[2rem] font-semibold leading-[2.68rem] md:text-[2.074rem] md:leading-[2.8rem];
+  }
+  h4 {
+    @apply text-[1.5rem] font-semibold leading-[2.1rem] md:text-[1.728rem] md:leading-[2.5rem];
+  }
+  h5 {
+    @apply text-[1.3rem] font-semibold leading-[1.8rem] md:text-[1.44rem] md:leading-[2rem];
+  }
+  h6 {
+    @apply text-[1.1rem] font-semibold leading-[1.6rem] md:text-[1.2rem] md:leading-[1.8rem];
+  }
+}
+
+@layer components {
+  .shape_1 {
+    clip-path: polygon(0 0, 100% 0, 92% 46%, 100% 100%, 0 100%, 9% 49%);
+  }
+}
+
+@layer utilities {
+  .wavy_shape {
+    --mask: radial-gradient(76.2px at 50% 107.5px, #000 99%, #0000 101%)
+        calc(50% - 100px) 0/200px 100%,
+      radial-gradient(76.2px at 50% -57.5px, #0000 99%, #000 101%) 50% 50px/200px
+        100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+  .wavy_shape_tb {
+    --mask:
+    radial-gradient(111.8px at 50% 150px,#000 99%,#0000 101%) calc(50% - 100px) 0/200px 51% repeat-x,
+    radial-gradient(111.8px at 50% -100px,#0000 99%,#000 101%) 50% 50px/200px calc(51% - 50px) repeat-x,
+    radial-gradient(111.8px at 50% calc(100% - 150px),#000 99%,#0000 101%) calc(50% - 100px) 100%/200px 51% repeat-x,
+    radial-gradient(111.8px at 50% calc(100% + 100px),#0000 99%,#000 101%) 50% calc(100% - 50px)/200px calc(51% - 50px) repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  }
+
+  
+}

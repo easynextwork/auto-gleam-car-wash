@@ -1,0 +1,7 @@
+/* Swiper Pagination */
+.hero-swiper .swiper-pagination-bullet {
+  background-color: #e81c2e;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 2px;
+}
