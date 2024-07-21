@@ -96,17 +96,17 @@ const Booking = () => {
                 <input
                   type="text"
                   placeholder="Phone*"
-                  className="rounded-md bg-slate-50 px-5 py-3"
+                  className="rounded-md w-full bg-slate-50 px-5 py-3"
                 />
                 <input
                   type="text"
                   placeholder="Email*"
-                  className="rounded-md bg-slate-50 px-5 py-3"
+                  className="rounded-md w-full bg-slate-50 px-5 py-3"
                 />
                 <input
                   type="date"
                   placeholder="Select date"
-                  className="rounded-md bg-slate-50 px-5 py-3 placeholder:text-slate-500"
+                  className="rounded-md w-full bg-slate-50 px-5 py-3 placeholder:text-slate-500"
                 />
 
                 <textarea

@@ -2,12 +2,14 @@
 import { Constants } from "@/utils/Constants";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <div className="lg:hidden">
@@ -48,10 +50,10 @@ const Sidebar = () => {
         {/* Navigation */}
         <ul onClick={() => setOpen(false)}>
           {Constants.navigation.map((item: any, index: number) => (
-            <li key={index}>
+            <li key={index} onClick={() => setActiveIndex(index)}>
               <Link
                 href={item.url}
-                className="mb-5 block w-full rounded-md border border-gray-300 px-4 py-2 text-2xl font-medium"
+                className={`mb-5 block w-full rounded-md border border-gray-300 px-4 py-2 text-2xl font-medium ${activeIndex == index ? "bg-secondary text-white" : ""}`}
               >
                 {item.label}
               </Link>
